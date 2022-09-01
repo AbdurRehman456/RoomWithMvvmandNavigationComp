@@ -12,6 +12,7 @@ import kotlinx.coroutines.launch
 class MainViewModel(private val repository: NoteRepository) : ViewModel() {
 
     fun getNotes(): LiveData<List<Notes>> {
+
         return repository.getNotes()
     }
 
@@ -19,5 +20,13 @@ class MainViewModel(private val repository: NoteRepository) : ViewModel() {
         viewModelScope.launch(Dispatchers.IO) {
             repository.insertNote(notes)
         }
+
+    }
+    fun updateNote(notes: Notes){
+        viewModelScope.launch(Dispatchers.IO) {repository.updateNote(notes)  }
+    }
+
+    fun deleteNote(notes: Notes){
+        viewModelScope.launch(Dispatchers.IO) {repository.deleteNote(notes)  }
     }
 }

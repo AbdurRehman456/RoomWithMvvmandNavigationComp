@@ -6,7 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".fragments.HomeFragment">
 
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recylerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
